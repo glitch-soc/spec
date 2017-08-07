@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "******** Building Jekyll site ********"
       - bundle exec jekyll build
- artifacts:
-  files: 
+artifacts:
+  files:
     - '**/*'
   base-directory: '_spec'
