@@ -8,7 +8,5 @@ phases:
     commands:
       - echo "******** Building Jekyll site ********"
       - bundle exec jekyll build
-artifacts:
-  files:
-    - '**/*'
-  base-directory: '_site'
+      - echo "******** Uploading to S3 ********"
+      - aws s3 sync _site/ s3://spec.glitch.social
