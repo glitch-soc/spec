@@ -1,0 +1,5 @@
+exclude:
+  - 'buildspec.yml'
+  - 'Gemfile'
+  - 'Gemfile.lock'
+  - 'README.md'
