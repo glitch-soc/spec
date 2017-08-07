@@ -1,3 +1,3 @@
 #  GlitchSoc Specifications  #
 
-View this repo at <http://spec.glitch.social>.
+View this repo at <https://spec.glitch.social>.
