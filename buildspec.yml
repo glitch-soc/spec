@@ -1,0 +1,8 @@
+phases:
+  install:
+    commands:
+      - gem install jekyll jekyll-paginate jekyll-sitemap jekyll-gist
+  build:
+    commands:
+      - echo "******** Building Jekyll site ********"
+      - jekyll build
