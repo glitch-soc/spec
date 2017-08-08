@@ -1,0 +1,86 @@
+---
+title: Extensions and Declaring Support for Extensions
+uri: https://spec.glitch.social/FR/supports-extensions
+---
+<nav id="toc">
+	<p>
+		<small class="note"><strong>TODO</strong> Add a Table of Contents here.</small>
+	</p>
+</nav>
+
+<section id="introduction">
+	<h1>1. Introduction</h1>
+
+	<p>
+		Many instances include custom functionality that is exposed in the web user interface and API.
+		However, for other clients to support and make use of these extended features, they may need to be able to detect that an instance supports the feature.
+		This document defines a small, backward-compatible extension to allow instances to declare support for an extension and clients to query instances for their supported extensions.
+		It also contains advisory recommendations for defining and specifying extensions.
+	</p>
+</section>
+
+<section id="extensions">
+	<h1>2. Extensions</h1>
+
+	<p>
+		An <dfn id="dfn-extension">Extension</dfn> is a named and defined set of functonality that an <dfn id="dfn-instance">Instance</dfn> (a Mastodon instance or other social networking server) can provide.
+	</p>
+
+	<p>
+		An Extension is identified by a <dfn id="dfn-uri"><abbr title="Uniform Resource Identifier">URI</abbr></dfn> <small class="note">(<strong>TODO</strong> cite the URI spec)</small>, the <dfn id="dfn-extension-uri">Extension URI</dfn> of the Extension.
+		The Extension URI <em>must</em> be globally unique across all Extensions.
+		<small class="note"><strong>TODO</strong> Insert a note suggesting domain qualifying URIs to ensure uniqueness here.</small>
+		<small class="note"><strong>TODO</strong> Insert a "<em>may</em>" here suggesting using a http/https URI for a spec/docs for the extension.</small>
+		<small class="note"><strong>TODO</strong> Should we allow IRIs?</small>
+	</p>
+
+	<p>
+		<small class="note"><strong>TODO</strong> Insert a paragraph about how each extension defines what supporting that extension requires.</small>
+	</p>
+
+	<p>
+		<small class="note"><strong>TODO</strong> Insert a paragraph about permanence here, maybe.</small>
+	</p>
+</section>
+
+<section id="supported-extensions">
+	<h1>3. The "supported-extensions" key</h1>
+
+	<p>
+		In order to indicate which <a href="#dfn-extension">Extensions</a> an <a href="#dfn-instance">Instance</a> supports, the Instance <em>must</em> include a <code>"supported-extensions"</code> property in the <code>/instance-info</code> <small class="note">(<strong>TODO</strong> update this (and elsewhere in this draft) to whatever name we decide upon and link to the relevant spec)</small> for the Instance.
+		An Instance <em>may</em> also expose this information in other locations, such as within instance information endpoints in any specific client-facing or server-to-server APIs <small class="note">(<strong>TODO</strong> maybe make this an <code>abbr</code>)</small> implemented by the Instance.
+	</p>
+
+	<p>
+		The value of the <code>"supported-extensions"</code> property <em>must</em> be a JSON <small class="todo">(add a cite to the JSON spec)</small> array.
+		Each element within the array <em>must</em> be a string whose value is the <a href="#dfn-extension-uri">Extension URI</a> for an <a href="#dfn-extension">Extension</a> supported by the Instance.
+	</p>
+
+	<section id="checking-the-supported-extensions-property">
+		<h2>3.1. Testing the <code>"supported-extensions"</code> property</h2>
+
+		<p>
+			A client or other Instance <em>should</em> test that an Instance implements this specification by requesting the <code>/instance-info</code> for the Instance and testing for the presence of a <code>"supported-extensions"></code> property with an array value.
+		</p>
+
+		<p>
+			To test that an Instance supports a specific Extension, a client or other Instance <em>shall</em> examine the contents of <code>"supported-extensions"</code> array for a string that matches the Extension URI for the extension using an exact textual comparison <small class="note">(<strong>TODO</strong> should this be a textual comparison or bytewise? should we make recommendations about locale-relevant issues and stuff if we say IRIs are okay? case sensitive? etc.)</small>.
+		</p>
+	</section>
+
+	<section id="extension-optional-features">
+		<h2>3.2. Optional features in extensions</h2>
+		
+		<p>
+			<small class="note"><strong>TODO</strong> Insert stuff about how extensions might want to declare support for optional sub-features.</small>
+		</p>
+	</section>
+</section>
+
+<section id="recommendations-for-extension-authors">
+	<h1>4. Recommendations for Extension authors</h1>
+
+	<p>
+		<small class="note"><strong>TODO</strong> Insert text recommending writing a spec and stuff.</small>
+	</p>
+</sections>
