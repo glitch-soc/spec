@@ -1,3 +1,22 @@
+title: "GlitchSoc Specifications"
+description: "Specifications for OStatus servers"
+lang: "en"
+timezone: "America/Toronto"
+collections:
+  Draft:
+    output: true
+    permalink: "/WD/:path/"
+  Candidate:
+    output: true
+    permalink: "/RC/:path/"
+  Final:
+    output: true
+    permalink: "/FR/:path/"
+  Errata:
+    output: true
+    permalink: "/ER/:path/"
+gems:
+  - "jekyll-github-metadata"
 exclude:
   - 'buildspec.yml'
   - 'Gemfile'
