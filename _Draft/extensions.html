@@ -63,7 +63,7 @@ url: https://spec.glitch.social/FR/extensions/
 		</p>
 
 		<p>
-			To test that an Instance supports a specific Extension, a client or other Instance <em>shall</em> examine the contents of <code>"supported-extensions"</code> array for a string that matches the Extension URL for the extension using an exact textual comparison <small class="note">(<strong>TODO</strong> should this be a textual comparison or bytewise? should we make recommendations about locale-relevant issues and stuff if we say IRIs are okay? case sensitive? etc.)</small>.
+			To test that an Instance supports a specific Extension, a client or other Instance <em>shall</em> examine the contents of <code>"supported-extensions"</code> array for a URL string that equals the Extension URL for the extension using the URL equivalence algorithm defined in <a href="#ref-url">[URL]</a> with the <i>exclude fragments flag</i> not set.
 		</p>
 	</section>
 
