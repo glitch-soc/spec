@@ -1,6 +1,6 @@
 ---
 title: Extensions and Declaring Support for Extensions
-uri: https://spec.glitch.social/FR/extensions/
+url: https://spec.glitch.social/FR/extensions/
 ---
 <nav id="toc">
 	<p>
@@ -27,11 +27,10 @@ uri: https://spec.glitch.social/FR/extensions/
 	</p>
 
 	<p>
-		An Extension is identified by a <dfn id="dfn-uri"><abbr title="Uniform Resource Identifier">URI</abbr></dfn>  <a href="#ref-uri">[URI]</a>, the <dfn id="dfn-extension-uri">Extension URI</dfn> of the Extension.
-		The Extension URI <em>must</em> be globally unique across all Extensions.
-		<small class="note"><strong>TODO</strong> Insert a note suggesting domain qualifying URIs to ensure uniqueness here.</small>
-		<small class="note"><strong>TODO</strong> Insert a "<em>may</em>" here suggesting using a http/https URI for a spec/docs for the extension.</small>
-		<small class="note"><strong>TODO</strong> Should we allow IRIs?</small>
+		An Extension is identified by a URL <a href="#ref-url">[URL]</a>, the <dfn id="dfn-extension-url">Extension URL</dfn> of the Extension.
+		The Extension URL <em>must</em> be globally unique across all Extensions.
+		<small class="note"><strong>TODO</strong> Insert a note suggesting domain qualifying URLs to ensure uniqueness here.</small>
+		<small class="note"><strong>TODO</strong> Insert a "<em>may</em>" here suggesting using a http/https URL for a spec/docs for the extension.</small>
 	</p>
 
 	<p>
@@ -53,7 +52,7 @@ uri: https://spec.glitch.social/FR/extensions/
 
 	<p>
 		The value of the <code>"supported-extensions"</code> property <em>must</em> be a JSON <a href="#ref-json">[JSON]</a> array.
-		Each element within the array <em>must</em> be a string whose value is the <a href="#dfn-extension-uri">Extension URI</a> for an <a href="#dfn-extension">Extension</a> supported by the Instance.
+		Each element within the array <em>must</em> be a string whose value is the <a href="#dfn-extension-url">Extension URL</a> for an <a href="#dfn-extension">Extension</a> supported by the Instance.
 	</p>
 
 	<section id="checking-the-supported-extensions-property">
@@ -64,7 +63,7 @@ uri: https://spec.glitch.social/FR/extensions/
 		</p>
 
 		<p>
-			To test that an Instance supports a specific Extension, a client or other Instance <em>shall</em> examine the contents of <code>"supported-extensions"</code> array for a string that matches the Extension URI for the extension using an exact textual comparison <small class="note">(<strong>TODO</strong> should this be a textual comparison or bytewise? should we make recommendations about locale-relevant issues and stuff if we say IRIs are okay? case sensitive? etc.)</small>.
+			To test that an Instance supports a specific Extension, a client or other Instance <em>shall</em> examine the contents of <code>"supported-extensions"</code> array for a string that matches the Extension URL for the extension using an exact textual comparison <small class="note">(<strong>TODO</strong> should this be a textual comparison or bytewise? should we make recommendations about locale-relevant issues and stuff if we say IRIs are okay? case sensitive? etc.)</small>.
 		</p>
 	</section>
 
@@ -91,8 +90,8 @@ uri: https://spec.glitch.social/FR/extensions/
 	<dl>
 		<dt id="ref-json">[JSON]</dt>
 		<dd><a href="https://tools.ietf.org/html/rfc7159">The JavaScript Object Notation (JSON) Data Interchange Format</a></dd>
-		<dt id="ref-uri">[URI]</dt>
-		<dd><a href="https://tools.ietf.org/html/rfc3986">Uniform Resource Identifier (URI): Generic Syntax</a></dd>
+		<dt id="ref-url">[URL]</dt>
+		<dd><a href="https://url.spec.whatwg.org/">URL</a></dd>
 	</dl>
 
 	<p>
