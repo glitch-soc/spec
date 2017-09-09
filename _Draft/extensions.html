@@ -71,6 +71,27 @@ uri: https://spec.glitch.social/FR/extensions/
 		<h1>3.2. Optional features in extensions</h1>
 		
 		<p>
+			Some <a href="#dfn-extension">Extensions</a> may wish to define optional sub-features that some but not all <a href="#dfn-instance">Instances</a> supporting the Extension will implement or different variants of functionality that an Instance may support. <small class="note"><strong>TODO</strong> A sentence or two about how we'll discuss a few ways of exposing this.</small>
+		</p>
+
+		<section id="query-fragment-subfeatures">
+			<h1>3.2.1. Query or fragment components in Extension URLs</h1>
+
+			<p>
+				When an <a href="#dfn-extension">Extension</a> defines a small set of optional sub-features, it <em>may</em> choose to define each sub-feature as a subsidiary Extension whose <a href="#dfn-extension-url">Extension URL</a> consists of the Extension URL of the parent Extension with a query or fragment component appended to identify the specific sub-feature.
+				<small class="note"><strong>TODO</strong> Explain implications of this choice. </small>
+			</p>
+		</section>
+		
+		<section id="per-extension-metadata">
+			<h1>3.2.2. Per-extension metadata in /instance-info</h1>
+
+			<p>
+				<small class="note"><strong>TODO</strong> Insert stuff about how extensions could stick stuff in instance-info under a $their-url key.</small>
+			</p>
+		</section>
+
+		<p>
 			<small class="note"><strong>TODO</strong> Insert stuff about how extensions might want to declare support for optional sub-features.</small>
 		</p>
 	</section>
