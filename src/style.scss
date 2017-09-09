@@ -1,2 +1,21 @@
 ---
 ---
+
+:root {
+	--text-color: black;
+	--note-color: #666666;
+}
+
+dfn, dt {
+	font-weight: bolder;
+	font-style: inherit;
+}
+
+small.note {
+	color: var(--note-color);
+	font-size: inherit;
+}
+
+small.note strong {
+	color: var(--text-color);
+}

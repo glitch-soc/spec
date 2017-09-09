@@ -15,6 +15,25 @@ collections:
   Errata:
     output: true
     permalink: "/ER/:path/"
+defaults:
+  -
+    scope:
+      path: ""
+      type: "Draft"
+    values:
+      layout: "spec"
+  -
+    scope:
+      path: ""
+      type: "Candidate"
+    values:
+      layout: "spec"
+  -
+    scope:
+      path: ""
+      type: "Final"
+    values:
+      layout: "spec"
 gems:
   - "jekyll-github-metadata"
 exclude:
