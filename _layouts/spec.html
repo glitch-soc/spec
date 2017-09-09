@@ -12,6 +12,7 @@
 			<article class="{{ page.collection }}">
 				<header>
 					<h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+					<h2>{{ site.data.messages.locales[locale].canonical_url }}: {{ page.uri }}</h2>
 					{% if page.version %}<h2>{{ site.data.messages.locales[locale].version }} {{ page.version }}</h2>{% endif %}
 					{% if page.last_updated %}<time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: "%d %b %Y" }}</time>{% endif %}
 					{% if page.description %}<p>{{ page.description }}{% endif %}
