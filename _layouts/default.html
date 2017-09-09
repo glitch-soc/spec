@@ -1,0 +1,32 @@
+<!DOCTYPE html>{{% capture locale %}}{{ page.lang | default: site.lang | default: 'en' }}{{% endcapture %}}
+<html lang="{{ locale }}">
+	<head>
+		<title>{{ page.title | default: site.title | default: site.github.repository_name | strip_html }}{% if page.version %} | {{ site.data.messages.locales[locale].version }} {{ page.version | strip_html }}{% endif %}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="{{ '/src/style.css?v=' | append: site.github.build_revision | relative_url }}">
+		{% if page.description %}<meta name="description" content="{{ page.description | strip_html }}">{% endif %}
+	</head>
+	<body>
+		<main>
+			<article class="{{ page.collection }}">
+				<header>
+					<h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+					{% if page.version %}<h2>{{ site.data.messages.locales[locale].version }} {{ page.version }}</h2>{% endif %}
+					{% if page.last_updated %}<time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: "%d %b %Y" }}</time>{% endif %}
+					{% if page.description %}<p>{{ page.description }}{% endif %}
+					{% if page.authors %}<address>{% for author in page.authors %}
+						<p>
+							{% if author.name %}{{ author.name %}}<br>{% endif %}
+							{% if author.handle %}{% if author.handle_url %}<a href="{{ author.handle_url }}" target="_blank">{% endif %}{{ author.handle }}{% if author.handle_url %}</a>{% endif %}{% endif %}
+					{% endfor %}</address>{% endif %}
+				</header>
+				<section>
+
+					{{ content }}
+
+				</section>
+			</article>
+		</main>
+	</body>
+</html>
