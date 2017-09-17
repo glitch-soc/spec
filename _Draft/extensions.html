@@ -87,6 +87,11 @@ uri: https://spec.glitch.social/FR/extensions/
 			<h1>3.2.2. Per-extension metadata in /instance-info</h1>
 
 			<p>
+				When an <a href="#dfn-extension">Extension</a> allows <a href-"#dfn-instance">Instances</a> implementing the Extension to vary more broadly or wishes to allow Instances implementing the Extension to define values for parameters which define certain aspects of the Extension's behavior, it <em>may</em> instruct Instances to expose this information in the <code>/instance-info</code> as a top-level property whose key is the <a href="#dfn-extension-url">Extension URL</a> of the Extension.
+				An Extension which uses such a property <em>should</em> define which values of the property are valid and how these values should be interpreted.
+			</p>
+
+			<p>
 				<small class="note"><strong>TODO</strong> Insert stuff about how extensions could stick stuff in instance-info under a $their-url key.</small>
 			</p>
 		</section>
